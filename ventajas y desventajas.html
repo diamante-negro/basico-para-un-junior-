@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Ventajas y Desventajas</title>
+    <!-- Incluye Tailwind CSS CDN para estilos utilitarios -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header>
+        <h1>Aprendiendo Python</h1>
+        <p>Un viaje hacia el dominio del lenguaje de programación más versátil.</p>
+        <center>
+        <img src="https://external-preview.redd.it/python-3-13-alpha-1-contains-breaking-changes-whats-the-v0-K7kglaI0lcL-KZ64RqMp7GCzwszsBnlB0GPlobF1wXw.jpg?auto=webp&s=a78be10cc0071bd5f4034f14086c52c4ccbcc278" width="150" height="150" alt="Logo de Python">
+        </center>
+    </header>
+
+     <nav>
+        <ul>
+            <li><a href="python.htm" onclick="mostrarSeccion('introduccion-a-python')">Introducción a Python</a></li>
+            <li><a href="python.htm" onclick="mostrarSeccion('caracteristicas')">Características</a></li>
+            <li><a href="python.htm" onclick="mostrarSeccion('historia')">Historia de Python</a></li>
+            <li><a href="python.htm" onclick="mostrarSeccion('ejemplo-python')">Ejemplo de Python</a></li>
+            <li><a href="python.htm" onclick="mostrarSeccion('encuesta')">formulario</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="toggleMoreDropdown(event)" class="dropdown-toggle">Más <span class="arrow-icon"></span></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Ventajas y Desventajas</a></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <main class="container mx-auto p-6 bg-white rounded-lg shadow-md mt-6">
+        <h1 class="text-3xl font-bold text-center mb-4">Python</h1>
+        <!-- Botón para abrir el modal -->
+        <div class="button" onclick="openModal()">
+            <div class="border-line top-line"></div>
+            <div class="border-line right-line"></div>
+            <div class="border-line bottom-line"></div>
+            <div class="border-line left-line"></div>
+            <div class="inner1">
+                <div class="tri tl"></div>
+                <div class="tri tr"></div>
+                <div class="tri bl"></div>
+                <div class="tri br"></div>
+                <div class="dot dl"></div>
+                <div class="dot dr"></div>
+                Abrir ventajas y desventajas
+            </div>
+        </div>
+
+        <!-- El Modal de Ventajas y Desventajas -->
+        <div id="modalPython" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+
+                <h2 class="text-2xl font-bold mb-4 text-center text-blue-700">Ventajas y Desventajas de Python</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-green-600">Ventajas de Python</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Fácil de aprender y usar:</strong> Su sintaxis simple y legible lo hace ideal para principiantes.</li>
+                            <li><strong>Gran comunidad y soporte:</strong> Una comunidad activa que ofrece una vasta cantidad de recursos y ayuda.</li>
+                            <li><strong>Amplia biblioteca estándar:</strong> Viene con una gran colección de módulos y paquetes listos para usar.</li>
+                            <li><strong>Versatilidad:</strong> Se puede usar para desarrollo web, ciencia de datos, IA, automatización, etc.</li>
+                            <li><strong>Multiplataforma:</strong> Compatible con Windows, macOS, Linux y otros sistemas operativos.</li>
+                            <li><strong>Orientado a objetos:</strong> Soporta programación orientada a objetos (POO), lo que facilita el desarrollo de software modular.</li>
+                            <li><strong>Código abierto y gratuito:</strong> Disponible para todos sin costo.</li>
+                            <li><strong>Integración:</strong> Se integra fácilmente con otros lenguajes y tecnologías.</li>
+                            <li><strong>Productividad:</strong> Permite desarrollar aplicaciones rápidamente con menos líneas de código.</li>
+                            <li><strong>Frameworks robustos:</strong> Cuenta con frameworks como Django y Flask para desarrollo web.</li>
+                            <li><strong>Ciencia de datos y Machine Learning:</strong> Excelentes librerías como NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch.</li>
+                            <li><strong>Automatización:</strong> Ideal para scripting y automatización de tareas repetitivas.</li>
+                            <li><strong>Escalabilidad:</strong> Aunque no es el más rápido, su capacidad de integración permite escalar proyectos.</li>
+                            <li><strong>Sintaxis limpia y consistente:</strong> Facilita la lectura y el mantenimiento del código.</li>
+                            <li><strong>Grandes empresas lo usan:</strong> Google, Instagram, Spotify, Netflix, entre otras, confían en Python.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-red-600">Desventajas de Python</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Velocidad:</strong> Es más lento que lenguajes compilados como C++ o Java debido a su naturaleza interpretada.</li>
+                            <li><strong>Uso de memoria:</strong> Puede consumir más memoria, lo que puede ser un problema para aplicaciones con restricciones de recursos.</li>
+                            <li><strong>No es ideal para desarrollo móvil nativo:</strong> Aunque existen frameworks, no es la primera opción para apps nativas de iOS/Android.</li>
+                            <li><strong>Limitaciones en el acceso a la base de datos:</strong> Sus capas de acceso a bases de datos a veces son menos maduras que en otros lenguajes.</li>
+                            <li><strong>GIL (Global Interpreter Lock):</strong> Limita la ejecución de hilos a uno a la vez, afectando el rendimiento en tareas que requieren paralelismo puro en CPU.</li>
+                            <li><strong>Errores en tiempo de ejecución:</strong> Al ser un lenguaje de tipado dinámico, algunos errores solo se detectan en tiempo de ejecución.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer>
+        <p> Christopher Velasquez/Lorenzo Calvio/Andres Jacobo - Bachillerato en Desarrollo de Software.&copy;2025  Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById('modalPython').style.display = 'flex';
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modalPython').style.display = 'none';
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera de él
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalPython');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Función para manejar la navegación (placeholder)
+        function mostrarSeccion(event, sectionId) {
+            event.preventDefault(); // Previene la recarga de la página
+            console.log(`Navegando a la sección: ${sectionId}`);
+            // Aquí podrías añadir lógica para mostrar/ocultar secciones
+            // Por ejemplo:
+            // document.querySelectorAll('main > div').forEach(div => div.style.display = 'none');
+            // document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Función para manejar el dropdown "Más"
+        function toggleMoreDropdown(event) {
+            event.preventDefault(); // Previene la recarga de la página
+            const dropdown = event.currentTarget.closest('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Cerrar el dropdown si se hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
