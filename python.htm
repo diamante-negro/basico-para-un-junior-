@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo Python</title>
-    <script src="encuesta.js"></script>
+  <script src="encuesta.js"></script>
     <!-- Enlace a la fuente Roboto de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
@@ -24,7 +24,7 @@
             <li><a href="#" onclick="mostrarSeccion('caracteristicas')">Características</a></li>
             <li><a href="#" onclick="mostrarSeccion('historia')">Historia de Python</a></li>
             <li><a href="#" onclick="mostrarSeccion('ejemplo-python')">Ejemplo de Python</a></li>
-            <li><a href="#" onclick="mostrarSeccion('encuesta')">formulario</a></li>
+            <li><a href="#" onclick="mostrarSeccion('encuesta')">Examen</a></li>
             <li class="dropdown">
                 <a href="#" onclick="toggleMoreDropdown(event)" class="dropdown-toggle">Más <span class="arrow-icon"></span></a>
                 <ul class="dropdown-content">
@@ -66,7 +66,7 @@
                 <p>No es necesario declarar el tipo de variable explícitamente; Python determina el tipo en tiempo de ejecución.</p>
                 <li><h4>Orientado a objetos:</h4></li>
                 <p>Python considera todo como objetos, lo que facilita la organización y reutilización del código.</p>
-                <li><h4>Multip aradigma:</h4></li>
+                <li><h4>Multiparadigma:</h4></li>
                 <p>Python soporta múltiples estilos de programación, incluyendo la programación orientada a objetos, estructurada y funcional.</p>
                 <li><h4>Gran cantidad de bibliotecas y frameworks:</h4></li>
                 <p>Python cuenta con una extensa colección de bibliotecas y frameworks para diversas áreas, como desarrollo web (Django, Flask), ciencia de datos (Pandas, NumPy, Matplotlib), aprendizaje automático (TensorFlow, Keras, Scikit-learn) e inteligencia artificial.</p>
@@ -82,38 +82,39 @@
                 <h2>Historia de Python</h2>
             </center>
             
+            
             <div class="carousel-container">
                 <div class="carousel-slides" id="carouselSlides">
                     <div class="carousel-slide">
-                        <img src="https://placehold.co/600x280/a0aec0/ffffff?text=Guido+van+Rossum" alt="Guido van Rossum, creador de Python">
+                        <img src="https://t3europe.eu/t3-europe/-/media/ti/t3-europe/images/blog/blog-python-blog-guido.jpg" width="150" height="150">
                         <p class="caption">Guido van Rossum, el creador de Python, en sus primeros años.</p>
                         <p class="paragraph">
                             Python fue concebido a finales de los años 80 por Guido van Rossum en el Centro de Investigación de Matemáticas e Informática (CWI) en los Países Bajos. Su objetivo era crear un nuevo lenguaje de scripting que fuera sucesor del lenguaje ABC y capaz de manejar excepciones y de interactuar con el sistema operativo Amoeba.
                         </p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://placehold.co/600x280/90cdf4/ffffff?text=Logo+Python+Antiguo" alt="Antiguo logo de Python">
+                        <img src="https://www.vhv.rs/dpng/d/443-4430813_python-logo-png-transparent-old-python-logo-png.png" width="150" height="150">
                         <p class="caption">Una representación del primer logo o icono de Python.</p>
                         <p class="paragraph">
                             Python 1.0 fue lanzado en enero de 1994. Incluía características como la programación funcional (<code>lambda</code>, <code>map</code>, <code>filter</code>, <code>reduce</code>) y un sistema de módulos. A lo largo de los años 90, Python ganó popularidad y se lanzaron varias versiones menores.
                         </p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://placehold.co/600x280/63b3ed/ffffff?text=Logo+Python+Actual" alt="Logo actual de Python">
+                        <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png" width="150" height="150" >
                         <p class="caption">El logo moderno de Python, reconocido globalmente.</p>
                         <p class="paragraph">
                             Python 2.0, lanzado en octubre de 2000, fue un hito importante. Introdujo características clave como la comprensión de listas (list comprehensions) y un sistema de recolección de basura con detección de ciclos. Esta versión se convirtió en la base para un crecimiento significativo del lenguaje.
                         </p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://placehold.co/600x280/4299e1/ffffff?text=Transicion+Python+3" alt="Representación de la transición a Python 3">
+                        <img src="https://www.dreamhost.com/blog/wp-content/uploads/2024/06/1220x628_Transitioning-To-Python-ES.webp"  width="150" height="150">
                         <p class="caption">El desafío de la transición de Python 2 a Python 3.</p>
                         <p class="paragraph">
                             Python 3.0 (también conocido como "Py3k"), lanzado en diciembre de 2008, fue una revisión importante del lenguaje que no era totalmente compatible con versiones anteriores de Python 2.x. Su objetivo era corregir fallos de diseño fundamentales y limpiar el lenguaje. La transición fue un proceso largo, pero Python 3 es ahora el estándar.
                         </p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://placehold.co/600x280/2b6cb0/ffffff?text=Comunidad+Python" alt="La comunidad global de Python">
+                        <img src="https://images.icon-icons.com/3027/PNG/512/python_icon_188903.png" alt="La comunidad global de Python" width="150" height="150">
                         <p class="caption">La vibrante y diversa comunidad global de Python.</p>
                         <p class="paragraph">
                             Actualmente, Python es uno de los lenguajes de programación más populares del mundo, utilizado en una amplia gama de campos como el desarrollo web (Django, Flask), la ciencia de datos (NumPy, Pandas), el aprendizaje automático (TensorFlow, PyTorch), la automatización, la inteligencia artificial y mucho más.
@@ -173,7 +174,7 @@
                 </div>
         </section>
         <section id="encuesta">
-            <h2>Encuesta</h2>
+            <h2>Examen</h2>
             <!-- Botón con el estilo personalizado -->
             <div class="button" onclick="document.getElementById('formularioEncuesta').style.display='block'; this.style.display='none';">
                 <div class="border-line top-line"></div>
@@ -187,7 +188,7 @@
                     <div class="tri br"></div>
                     <div class="dot dl"></div>
                     <div class="dot dr"></div>
-                    Abrir formulario
+                    Abrir Examen
                 </div>
             </div>
             
@@ -220,8 +221,48 @@
                 <label><input type="radio" name="p7" value="pandas" required> pandas</label>
                 <label><input type="radio" name="p7" value="turtle"> turtle</label>
 
+                <!-- Pregunta 8 -->
+<p>8. ¿Cuál es el método para agregar un elemento al final de una lista en Python?</p>
+<label><input type="radio" name="p8" value="append()" required> append()</label>
+<label><input type="radio" name="p8" value="add()"> add()</label>
+
+<!-- Pregunta 9 -->
+<p>9. ¿Qué símbolo se usa para definir una cadena de texto en Python?</p>
+<label><input type="radio" name="p9" value='"' required> " </label>
+<label><input type="radio" name="p9" value="'"> ' </label>
+
+<!-- Pregunta 10 -->
+<p>10. ¿Cómo se llama la estructura condicional en Python?</p>
+<label><input type="radio" name="p10" value="if" required> if</label>
+<label><input type="radio" name="p10" value="switch"> switch</label>
+
+<!-- Pregunta 11 -->
+<p>11. ¿Cuál es la función para obtener la longitud de una lista?</p>
+<label><input type="radio" name="p11" value="len()" required> len()</label>
+<label><input type="radio" name="p11" value="length()"> length()</label>
+
+<!-- Pregunta 12 -->
+<p>12. ¿Qué comando se usa para repetir un bloque en Python?</p>
+<label><input type="radio" name="p12" value="for" required> for</label>
+<label><input type="radio" name="p12" value="repeat"> repeat</label>
+
+<!-- Pregunta 13 -->
+<p>13. ¿Cuál es la extensión estándar de archivos Python?</p>
+<label><input type="radio" name="p13" value=".py" required> .py</label>
+<label><input type="radio" name="p13" value=".txt"> .txt</label>
+
+<!-- Pregunta 14 -->
+<p>14. ¿Qué función se usa para convertir un string a entero?</p>
+<label><input type="radio" name="p14" value="int()" required> int()</label>
+<label><input type="radio" name="p14" value="str()"> str()</label>
+
+<!-- Pregunta 15 -->
+<p>15. ¿Qué palabra clave se usa para definir una clase en Python?</p>
+<label><input type="radio" name="p15" value="class" required> class</label>
+<label><input type="radio" name="p15" value="def"> def</label>
+
                 <br><br>
-                <button type="submit">Enviar formulario</button>
+                <button type="submit">Enviar Examen</button>
                 
             </form>
         </section>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario de Calidad de Software</title>
+
+    <!-- Incluye los archivos CSS y JS del carrusel Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Incluye el CDN de Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Importa una fuente elegante de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados para el cuerpo y los elementos del carrusel */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            color: #fff;
+            background-color: #800000;
+            overflow: hidden; /* Evita el scroll del cuerpo para el carrusel a pantalla completa */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .swiper {
+            width: 100vw;
+            height: 100vh;
+            /* Se ha eliminado el padding para que la imagen abarque todo el cuerpo */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Contenedor de cada diapositiva con la imagen de fondo */
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+            position: relative; /* Necesario para la capa de superposición */
+        }
+
+        /* Capa de superposición para mejorar la legibilidad del texto */
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Opacidad oscura */
+            z-index: 1;
+        }
+
+        /* Contenido de la diapositiva por encima de la capa de superposición */
+        .slide-content {
+            max-width: 800px;
+            padding: 0 20px;
+            text-align: center;
+            z-index: 2; /* Asegura que el contenido esté encima de la capa */
+        }
+
+        .slide-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: blue;
+        }
+
+        .slide-content p {
+            opacity: 0.8;
+            font-size: 1.7rem;
+            line-height: 1.6;
+            color: darkblue;
+        }
+
+        p{
+            border-radius: 5%;
+            background-color: darkgrey;
+        }
+        /* Paginación del carrusel */
+        .swiper-pagination {
+            bottom: 30px !important;
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.4) !important;
+            opacity: 1 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #cfe033 !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <!-- Los 25 conceptos se agregan aquí como diapositivas individuales -->
+            <div class="swiper-slide" data-background-image="https://www.sinco.co/hs-fs/hubfs/Banner-_-SGC.png?width=1920&name=Banner-_-SGC.png">
+                <div class="slide-content">
+                    <h2>1. Sistema de Gestión de Calidad (SGC)</h2>
+                    <p>Un conjunto de políticas, procesos y procedimientos que una organización implementa para asegurar que sus productos o servicios cumplan con los requisitos del cliente y mejoren de forma continua. En desarrollo web, se aplica para asegurar que los procesos, desde la planificación hasta la entrega, sigan estándares de alta calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://static.platzi.com/media/user_upload/Pruebas-ciclo-835002f6-962a-4c8c-9512-cfdee1a5db13.jpg">
+                <div class="slide-content">
+                    <h2>2. Ciclo de Vida del Software</h2>
+                    <p>Un modelo que describe las fases de un proyecto de software, desde la concepción hasta el desuso. Incluye fases como requisitos, diseño, implementación, pruebas y mantenimiento. Un enfoque en la calidad en cada etapa garantiza un producto final robusto y confiable.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://koneggui.com.ec/images/easyblog_articles/121/b2ap3_large_iso-9001-2015-manual-calidad.jpg">
+                <div class="slide-content">
+                    <h2>3. Manual de Calidad</h2>
+                    <p>Un documento que describe el sistema de gestión de calidad de una organización. Define la política de calidad, los objetivos, la estructura organizacional y las responsabilidades, sirviendo como una guía para todos los miembros del equipo.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://se2code.s3.amazonaws.com/organizadoresgraficos/uploads/2022/12/04-37.jpg">
+                <div class="slide-content">
+                    <h2>4. Objetivos de Calidad</h2>
+                    <p>Metas medibles y específicas que una organización establece para su desempeño en materia de calidad. Deben ser consistentes con la política de calidad y a menudo se centran en mejorar la satisfacción del cliente, reducir defectos y optimizar los procesos.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.nueva-iso-9001-2015.com/wp-content/uploads/2013/12/blog-9001.jpg">
+                <div class="slide-content">
+                    <h2>5. Política de Calidad</h2>
+                    <p>La declaración formal de la dirección de una organización sobre sus intenciones y dirección en relación con la calidad. Es un compromiso con la mejora continua y el cumplimiento de los requisitos de los clientes y reglamentarios.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.solbyte.com/wp-content/uploads/2024/12/5-etapas-del-proceso-de-desarrollo-de-software.jpg">
+                <div class="slide-content">
+                    <h2>6. Proceso de Desarrollo de Software</h2>
+                    <p>El conjunto de actividades, métodos y prácticas que se utilizan para crear un producto de software. La aplicación de la calidad en este proceso asegura que cada etapa contribuya a un producto final que cumpla con los estándares.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.ulatina.ac.cr/sites/default/files/2022-02/01-Blog-UL-15.png">
+                <div class="slide-content">
+                    <h2>7. Normas ISO</h2>
+                    <p>Estándares internacionales que definen los requisitos para los sistemas de gestión de calidad en diversas industrias, incluyendo el desarrollo de software. Un ejemplo relevante es la <b>ISO 9001</b>, que certifica que una empresa tiene procesos de calidad rigurosos.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://img.innovaciondigital360.com/wp-content/uploads/2022/01/07223232/la-calidad-del-software.jpg">
+                <div class="slide-content">
+                    <h2>8. Plan de Calidad del Software</h2>
+                    <p>Un documento que especifica los estándares, prácticas, recursos, actividades y mediciones de calidad que se aplicarán a un proyecto de software. Sirve como una hoja de ruta para el equipo de desarrollo, asegurando que se mantengan los niveles de calidad acordados.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://midias-blog-mkt.s3.amazonaws.com/uploads/2017/02/Las-4-etapas-esenciales-en-auditor%C3%ADas-calidad.png">
+                <div class="slide-content">
+                    <h2>9. Auditoría de Calidad</h2>
+                    <p>Un examen sistemático e independiente para determinar si las actividades y los resultados relacionados con la calidad cumplen con las disposiciones planificadas, si estas disposiciones se implementan de manera efectiva y si son adecuadas para alcanzar los objetivos.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.tarlogic.com/wp-content/uploads/2022/01/auditoria-seguridad-1.jpg">
+                <div class="slide-content">
+                    <h2>10. Aseguramiento de Seguridad</h2>
+                    <p>Un proceso que garantiza que los sistemas, datos e información estén protegidos contra accesos no autorizados, daños o interrupciones. En el contexto de la calidad, implica la integración de prácticas de seguridad en el ciclo de vida del software para prevenir vulnerabilidades.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://conasa.grupocibernos.com/hubfs/Procesos%20de%20control%20de%20calidad%20%C2%BFqu%C3%A9%20son%20y%20c%C3%B3mo%20se%20realizan.jpg">
+                <div class="slide-content">
+                    <h2>11. Control de Calidad</h2>
+                    <p>El conjunto de actividades operativas utilizadas para cumplir con los requisitos de calidad. Se enfoca en la identificación de defectos en el producto terminado, como la validación de un módulo HTML para asegurar que no tenga errores y que funcione correctamente.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://isotools.org/wp-content/uploads/2024/02/automatizacion-de-no-conformidades-900x500.jpg">
+                <div class="slide-content">
+                    <h2>12. Acciones Preventivas</h2>
+                    <p>Medidas tomadas para eliminar la causa de una no conformidad potencial u otra situación indeseable antes de que ocurra. Por ejemplo, la revisión del código por pares puede ser una acción preventiva para evitar futuros errores en un módulo HTML.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://img.itmastersmag.com/wp-content/uploads/2024/06/13222253/seguridad-del-software.jpg">
+                <div class="slide-content">
+                    <h2>13. Acciones Correctivas</h2>
+                    <p>Medidas tomadas para eliminar la causa de una no conformidad existente o un defecto. A diferencia de las acciones preventivas, estas se aplican después de que se haya detectado un problema, como corregir un error en un script que afecta el rendimiento de un sitio web.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://global.tiffin.edu/img/article/cuales-son-las-etapas-del-desarrollo-de-software.webp">
+                <div class="slide-content">
+                    <h2>14. Indicadores de Calidad</h2>
+                    <p>Métricas que se utilizan para medir y evaluar el desempeño de los procesos y productos en relación con los objetivos de calidad. Ejemplos incluyen el número de defectos por línea de código o el tiempo promedio de respuesta del servidor.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://chile.unir.net/wp-content/uploads/sites/34/2022/08/website-design-developing-programming-and-coding-technologies-picture-id1190408194-1.jpg">
+                <div class="slide-content">
+                    <h2>15. Gestión de Riesgos</h2>
+                    <p>El proceso de identificar, evaluar y priorizar los riesgos, y luego aplicar los recursos de manera coordinada para minimizar, monitorear y controlar la probabilidad o el impacto de eventos desafortunados. En el desarrollo de software, se utiliza para anticipar y mitigar problemas que podrían afectar la calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://innevo.com/hubfs/Blog%20Centro%20de%20Mejora/2024/Destacadas%20y%20TN/Art%C3%ADculo%2086-1-D.jpeg">
+                <div class="slide-content">
+                    <h2>16. Métricas de Calidad del Software</h2>
+                    <p>Medidas cuantitativas que evalúan las características de un producto de software o de los procesos involucrados en su desarrollo. Permiten a los equipos tomar decisiones basadas en datos para mejorar la calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://miro.medium.com/1*XA7D3mea-p4zk_2zoLvOJw.jpeg">
+                <div class="slide-content">
+                    <h2>17. Cobertura de Código</h2>
+                    <p>Una métrica de calidad que mide el porcentaje del código de un programa que es "ejecutado" por las pruebas automatizadas. Una alta cobertura de código es un indicador de que el software ha sido probado exhaustivamente.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.manwinwin.com/wp-content/uploads/2023/10/Maintenance-Software.jpg">
+                <div class="slide-content">
+                    <h2>18. Mantenimiento del Software</h2>
+                    <p>El proceso de modificar y actualizar el software después de su entrega, ya sea para corregir errores, mejorar el rendimiento o adaptar el producto a un nuevo entorno. Un buen mantenimiento es crucial para la calidad a largo plazo.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://theandroidapk.com/blog/wp-content/uploads/2021/09/Coding-Errors.jpg">
+                <div class="slide-content">
+                    <h2>19. Error de Código</h2>
+                    <p>Un "bug" es un error, falla o defecto en un programa de computadora que produce un resultado incorrecto o inesperado. La detección y corrección de errores son componentes clave del control de calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://4444632.fs1.hubspotusercontent-na1.net/hubfs/4444632/H1.png">
+                <div class="slide-content">
+                    <h2>20. Estándar de Calidad</h2>
+                    <p>Un conjunto de criterios o requisitos que deben cumplirse para que un producto, servicio o proceso sea considerado de alta calidad. Son las reglas por las que se rige el desarrollo, como los estándares de codificación para HTML.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.valtx.pe/storage/uploads/metricas%20de%20desarrollo%20de%20software.png">
+                <div class="slide-content">
+                    <h2>21. Tasa de Defectos</h2>
+                    <p>Una métrica de calidad que calcula el número de defectos encontrados en un producto de software por unidad de medida (por ejemplo, defectos por 1000 líneas de código). Una tasa baja indica un producto de mayor calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://starkcloud.com/wp-content/uploads/2025/01/Ciclo-de-Vida-Desarrollo-Software.webp">
+                <div class="slide-content">
+                    <h2>22. Tiempo de Ciclo</h2>
+                    <p>El tiempo total que transcurre desde el inicio de un proceso hasta su finalización. En el desarrollo de software, un tiempo de ciclo más corto puede indicar una mayor eficiencia, siempre y cuando no se sacrifique la calidad.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://cdn.escala.com/wp-content/uploads/2022/02/todo-sobre-retencion-de-clientes-escala-1.png.webp">
+                <div class="slide-content">
+                    <h2>23. Tasa de Retención de Usuarios</h2>
+                    <p>Mide el porcentaje de usuarios que continúan utilizando un producto a lo largo del tiempo. Una alta tasa de retención es un fuerte indicador de que el software es de alta calidad y satisface las necesidades de los usuarios.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://static.wixstatic.com/media/3a7405_908b9c8e93f445ef97f16e758ee2dc9b~mv2.jpg/v1/fill/w_552,h_524,al_c,q_80,enc_avif,quality_auto/3a7405_908b9c8e93f445ef97f16e758ee2dc9b~mv2.jpg">
+                <div class="slide-content">
+                    <h2>24. Aseguramiento de la Calidad (QA)</h2>
+                    <p>El conjunto de actividades planificadas y sistemáticas implementadas en el marco del sistema de calidad para proporcionar la confianza de que un producto o servicio cumplirá con los requisitos de calidad. Se enfoca en prevenir defectos.</p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-background-image="https://www.certus.edu.pe/blog/wp-content/uploads/2021/01/tecnicas-pruebas-software-certus.jpg">
+                <div class="slide-content">
+                    <h2>25. Pruebas</h2>
+                    <p>El proceso de ejecutar un sistema o componente con el objetivo de encontrar errores. Es una parte crucial del control de calidad, ya que valida que el software funciona como se espera y cumple con todos los requisitos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agrega los botones de navegación -->
+        <div class="swiper-button-next text-white hover:text-gray-300 transition-colors"></div>
+        <div class="swiper-button-prev text-white hover:text-gray-300 transition-colors"></div>
+        <!-- Agrega la paginación -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Incluye el script de Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializa el carrusel Swiper
+        const swiper = new Swiper(
+            ".swiper", {
+                // Configuración de Swiper
+                speed: 750, // Velocidad de la transición
+                parallax: true, // Efecto de paralaje
+                mousewheel: true, // Habilitar la rueda del ratón
+                loop: true, // Bucle infinito
+                pagination: { // Configuración de la paginación
+                    el: ".swiper-pagination",
+                    clickable: true, // Paginación clicable
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+        // Función para aplicar las imágenes de fondo a cada diapositiva
+        function applyBackgrounds() {
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+                const imageUrl = slide.getAttribute('data-background-image');
+                if (imageUrl) {
+                    slide.style.backgroundImage = `url('${imageUrl}')`;
+                }
+            });
+        }
+
+        // Aplica las imágenes de fondo una vez que el carrusel se inicializa
+        applyBackgrounds();
+
+    </script>
+</body>
+</html>

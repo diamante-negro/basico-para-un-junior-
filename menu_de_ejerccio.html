@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Ejercicios con Funciones</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="estilo_numero_2.Css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-4 min-h-screen">
+
+    <!-- Navegación del menú -->
+    <nav class="w-full max-w-4xl bg-pink-700 rounded-xl shadow-lg p-3 mb-8">
+        <ul class="flex flex-col md:flex-row justify-around items-center space-y-2 md:space-y-0">
+            <li><a class="text-white hover:text-pink-200 font-bold transition-colors duration-200 cursor-pointer p-2 rounded-lg" onclick="calcularMayor()">MAYOR DE TRES NÚMEROS</a></li>
+            <li><a class="text-white hover:text-pink-200 font-bold transition-colors duration-200 cursor-pointer p-2 rounded-lg" onclick="verificarEdad()">MAYOR O MENOR DE EDAD</a></li>
+            <li><a class="text-white hover:text-pink-200 font-bold transition-colors duration-200 cursor-pointer p-2 rounded-lg" onclick="tablaMultiplicar()">TABLA DE MULTIPLICAR</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal para la información y resultados -->
+    <main class="w-full max-w-4xl bg-white rounded-xl shadow-lg p-6 text-center">
+        <h1 class="text-3xl font-extrabold text-pink-800 mb-4">¡Bienvenido!</h1>
+        <p class="text-gray-700 text-lg">Haz clic en una de las opciones del menú superior para ejecutar un ejercicio.</p>
+        <!-- Contenedor para mostrar los resultados de los ejercicios -->
+        <div id="resultados" class="mt-6 p-4 bg-gray-50 rounded-lg text-left whitespace-pre-wrap overflow-x-auto"></div>
+    </main>
+
+    <!-- Modal personalizado para prompts y alerts -->
+    <div id="customModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
+            <p id="modalMessage" class="text-gray-800 mb-4 text-center text-lg font-semibold"></p>
+            <input type="number" id="modalInput" class="w-full p-2 border border-gray-300 rounded-md mb-4 hidden" placeholder="Ingresa un número...">
+            <div id="modalButtons" class="flex justify-center space-x-4">
+                <button id="modalOkBtn" class="bg-pink-600 text-white font-bold py-2 px-4 rounded-full hover:bg-pink-700 transition-colors duration-200">Aceptar</button>
+                <button id="modalCancelBtn" class="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-gray-400 transition-colors duration-200 hidden">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de JavaScript -->
+    <script>
+        // Obtiene referencias a los elementos del DOM para el modal
+        const modal = document.getElementById('customModal');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalInput = document.getElementById('modalInput');
+        const modalOkBtn = document.getElementById('modalOkBtn');
+        const modalCancelBtn = document.getElementById('modalCancelBtn');
+        const resultadosDiv = document.getElementById('resultados');
+
+        // Función personalizada para mostrar un mensaje de alerta
+        function showAlert(message) {
+            return new Promise(resolve => {
+                modalMessage.textContent = message;
+                modalInput.classList.add('hidden');
+                modalCancelBtn.classList.add('hidden');
+                modalOkBtn.onclick = () => {
+                    modal.classList.add('hidden');
+                    resolve();
+                };
+                modal.classList.remove('hidden');
+            });
+        }
+
+        // Función personalizada para solicitar un valor (prompt)
+        function showPrompt(message) {
+            return new Promise(resolve => {
+                modalMessage.textContent = message;
+                modalInput.value = '';
+                modalInput.classList.remove('hidden');
+                modalCancelBtn.classList.remove('hidden');
+                modalOkBtn.onclick = () => {
+                    modal.classList.add('hidden');
+                    resolve(modalInput.value);
+                };
+                modalCancelBtn.onclick = () => {
+                    modal.classList.add('hidden');
+                    resolve(null);
+                };
+                modal.classList.remove('hidden');
+            });
+        }
+
+        // Función para limpiar la pantalla de resultados
+        function clearResults() {
+            resultadosDiv.innerHTML = '';
+        }
+
+        // Función del ejercicio 1: Calcular el mayor de tres números
+        async function calcularMayor() {
+            clearResults();
+            try {
+                const aStr = await showPrompt("Ingresa el primer número:");
+                if (aStr === null) return;
+                const a = Number(aStr);
+                
+                const bStr = await showPrompt("Ingresa el segundo número:");
+                if (bStr === null) return;
+                const b = Number(bStr);
+
+                const cStr = await showPrompt("Ingresa el tercer número:");
+                if (cStr === null) return;
+                const c = Number(cStr);
+
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    await showAlert("Por favor, ingresa solo números válidos.");
+                    return;
+                }
+
+                let mayor = Math.max(a, b, c);
+                await showAlert(`El mayor de los tres números es: ${mayor}`);
+                resultadosDiv.textContent = `Números ingresados: ${a}, ${b}, ${c}\nResultado: El mayor es ${mayor}`;
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        // Función del ejercicio 2: Verificar si es mayor o menor de edad
+        async function verificarEdad() {
+            clearResults();
+            try {
+                const edadStr = await showPrompt("Ingresa tu edad:");
+                if (edadStr === null) return;
+                const edad = Number(edadStr);
+
+                if (isNaN(edad)) {
+                    await showAlert("Por favor, ingresa una edad válida.");
+                    return;
+                }
+
+                if (edad >= 18) {
+                    await showAlert("Eres mayor de edad.");
+                    resultadosDiv.textContent = `Edad ingresada: ${edad}\nResultado: Eres mayor de edad.`;
+                } else {
+                    await showAlert("Eres menor de edad.");
+                    resultadosDiv.textContent = `Edad ingresada: ${edad}\nResultado: Eres menor de edad.`;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        // Función del ejercicio 3: Tabla de multiplicar
+        async function tablaMultiplicar() {
+            clearResults();
+            try {
+                const numeroStr = await showPrompt("Ingresa un número para ver su tabla:");
+                if (numeroStr === null) return;
+                const numero = Number(numeroStr);
+
+                if (isNaN(numero)) {
+                    await showAlert("Por favor, ingresa un número válido.");
+                    return;
+                }
+
+                let tablaTexto = `Tabla del ${numero}:\n`;
+                for (let i = 1; i <= 10; i++) {
+                    tablaTexto += `${numero} x ${i} = ${numero * i}\n`;
+                }
+                
+                await showAlert(tablaTexto);
+                resultadosDiv.textContent = tablaTexto;
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Velasquez - Bachillerato en Desarrollo de Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif; /* Using a more modern font */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6; /* Improves readability */
+            color: #333; /* Default text color */
+        }
+
+        /* Header */
+        header {
+            background-color: #2c3e50; /* Darker, professional blue */
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        header h1 {
+            margin-bottom: 0.5em;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 0.5em 0;
+            font-size: 1.1em;
+        }
+
+        header img {
+            border-radius: 50%; /* Make the image circular */
+            border: 5px solid #ecf0f1; /* Light border around the image */
+            margin-top: 1em;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #34495e; /* Slightly lighter blue for nav */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows navigation items to wrap on smaller screens */
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+            font-weight: bold;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus { /* Added focus for accessibility */
+            background-color: #4a6684; /* Darker hover state */
+        }
+
+        /* Main Content Layout */
+        main {
+            display: flex;
+            flex-wrap: wrap; /* Allows sections to stack on smaller screens */
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 30px auto; /* More vertical margin */
+            background-color: white;
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+        }
+
+        article {
+            flex: 3;
+            padding-right: 30px; /* Increased padding */
+        }
+
+        aside {
+            flex: 1;
+            background-color: #ecf0f1; /* Lighter background for aside */
+            padding: 20px;
+            border-left: 1px solid #dcdcdc; /* Lighter border */
+            border-radius: 0 8px 8px 0; /* Match main's border-radius */
+        }
+
+        /* Content Styling */
+        h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db; /* Blue underline for headings */
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            margin-bottom: 1em;
+        }
+
+        article p a {
+            color: #3498db; /* Blue links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        article p a:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column; /* Stack main content and aside vertically */
+                padding: 15px;
+                margin: 15px auto;
+            }
+
+            article {
+                padding-right: 0; /* Remove right padding when stacked */
+                margin-bottom: 20px; /* Add space between article and aside */
+            }
+
+            aside {
+                border-left: none; /* Remove left border when stacked */
+                border-top: 1px solid #dcdcdc; /* Add top border instead */
+                border-radius: 8px; /* Adjust border radius for full width */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically */
+            }
+
+            nav ul li a {
+                padding: 10px 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd6e-FfdHftytT8zwDIaT3L-SzCvQrSJEoKlp1lHP2_77Tb1jJi7-czrSEkm3fmuzfdA8&usqp=CAU" height="200" width="200">
+        <h1>Christopher Velasquez Castro</h1>
+        <p>Bachillerato en Desarrollo de Software</p>
+        <p>Módulo: Desarrollo de Páginas Web</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index1.html">Página Web 1</a></li>
+            <li><a href="prueba_con_CSS.HTML">Página Web 2</a></li>
+            <li><a href="pagina_personal_prueva_1.html">Página Web 3</a></li>
+            <li><a href="octaba_pruebra.html">Página Web 4</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Información Personal</h2>
+            <p><strong>Nombre:</strong> Christopher Alexis Velasquez Castro</p>
+            <p><strong>Edad:</strong> 17 años</p>
+            <p><strong>Fecha de nacimiento:</strong> 08 de junio de 2008</p>
+            <p><strong>Curso:</strong> Bachillerato en Desarrollo de Software</p>
+            <p><strong>Descripción:</strong> Estudiante apasionado por la tecnología y el desarrollo web. Disfruto aprender nuevas habilidades y trabajar en proyectos creativos.</p>
+            <p><strong>Contacto:</strong> 7867-7403</p>
+            <p><strong>Correo electrónico:</strong>lex.velasquez98@gmail.com</a></p>
+            <p><strong>Redes sociales:</strong>
+                <a href="https://www.facebook.com/diamante.negro.751333" target="_blank" rel="noopener noreferrer">Facebook</a>,
+                <a href="https://www.instagram.com/el_diamante_negr0/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </p>
+        </article>
+
+        <aside>
+            <h3>Enlaces y Contenido Adicional</h3>
+            <p>Aquí puedes incluir enlaces a proyectos, un blog, o cualquier otra información relevante que complemente tu perfil principal.</p>
+
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Christopher Alexis Velasquez Castro. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Clásica</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Contenedor principal de la calculadora */
+        .calculator {
+            background-color: #2d3748;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Estilo del área de visualización */
+        #display {
+            width: 100%;
+            background-color: #4a5568;
+            border: none;
+            color: #fff;
+            font-size: 2.5em;
+            text-align: right;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            pointer-events: none; /* Evita que el usuario escriba en el display */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        /* Contenedor de botones con CSS Grid para el diseño de teclado */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        /* Estilo para todos los botones */
+        .buttons-grid button {
+            background-color: #4a5568;
+            color: #fff;
+            border: none;
+            font-size: 1.5em;
+            padding: 20px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            -webkit-user-select: none; /* Para evitar la selección de texto */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Estilo al pasar el cursor sobre los botones */
+        .buttons-grid button:hover {
+            background-color: #6a7488;
+        }
+
+        /* Estilo al hacer clic en los botones */
+        .buttons-grid button:active {
+            transform: scale(0.95);
+        }
+
+        /* Estilos específicos para los botones de operadores */
+        .buttons-grid button.operator {
+            background-color: #38b2ac;
+            font-weight: bold;
+        }
+        .buttons-grid button.operator:hover {
+            background-color: #31968e;
+        }
+
+        /* Estilo para el botón de igual */
+        .buttons-grid button.equals {
+            background-color: #f6ad55;
+            font-weight: bold;
+        }
+        .buttons-grid button.equals:hover {
+            background-color: #ed8936;
+        }
+
+        /* Estilo para el botón de limpiar (Clear) */
+        .buttons-grid button.clear {
+            background-color: #e53e3e;
+            font-weight: bold;
+        }
+        .buttons-grid button.clear:hover {
+            background-color: #c53030;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div id="display">0</div>
+        <div class="buttons-grid">
+            <button class="clear" data-action="clear">C</button>
+            <button class="operator" data-action="divide">/</button>
+            <button class="operator" data-action="multiply">*</button>
+            <button class="operator" data-action="subtract">-</button>
+            
+            <button data-number="7">7</button>
+            <button data-number="8">8</button>
+            <button data-number="9">9</button>
+            <button class="operator" data-action="add">+</button>
+            
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+            <button data-number="6">6</button>
+            
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            
+            <button data-number="0">0</button>
+            <button data-action="decimal">.</button>
+            <button class="equals" data-action="equals">=</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttonsGrid = document.querySelector('.buttons-grid');
+
+        let firstValue = '';
+        let operator = '';
+        let waitingForSecondValue = false;
+
+        buttonsGrid.addEventListener('click', (event) => {
+            const { target } = event;
+            const { number, action } = target.dataset;
+
+            // Ignorar clics que no sean en un botón
+            if (!target.matches('button')) {
+                return;
+            }
+
+            // Manejo de botones numéricos y decimales
+            if (number) {
+                if (waitingForSecondValue) {
+                    display.textContent = number;
+                    waitingForSecondValue = false;
+                } else {
+                    display.textContent = display.textContent === '0' ? number : display.textContent + number;
+                }
+            }
+
+            if (action === 'decimal') {
+                if (!display.textContent.includes('.')) {
+                    display.textContent += '.';
+                }
+            }
+
+            // Manejo de operadores
+            if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
+                if (firstValue && operator && !waitingForSecondValue) {
+                    const secondValue = parseFloat(display.textContent);
+                    const result = calculate(firstValue, operator, secondValue);
+                    display.textContent = result;
+                    firstValue = result;
+                } else {
+                    firstValue = parseFloat(display.textContent);
+                }
+                operator = action;
+                waitingForSecondValue = true;
+            }
+
+            // Manejo del botón de igual
+            if (action === 'equals') {
+                const secondValue = parseFloat(display.textContent);
+                if (firstValue && operator) {
+                    const result = calculate(firstValue, operator, secondValue);
+                    display.textContent = result;
+                    firstValue = '';
+                    operator = '';
+                    waitingForSecondValue = false;
+                }
+            }
+
+            // Manejo del botón de limpiar
+            if (action === 'clear') {
+                display.textContent = '0';
+                firstValue = '';
+                operator = '';
+                waitingForSecondValue = false;
+            }
+        });
+
+        // Función para realizar las operaciones matemáticas
+        function calculate(num1, op, num2) {
+            let result = 0;
+            if (op === 'add') {
+                result = num1 + num2;
+            } else if (op === 'subtract') {
+                result = num1 - num2;
+            } else if (op === 'multiply') {
+                result = num1 * num2;
+            } else if (op === 'divide') {
+                if (num2 === 0) return 'Error';
+                result = num1 / num2;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

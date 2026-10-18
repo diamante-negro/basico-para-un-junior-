@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Python</title>
+    <!-- Enlace a la fuente Inter de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Tailwind CSS a través de CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764baa 100%);
+        }
+        /* Custom styles that aren't easily done with Tailwind */
+        .zen-content p {
+            transition: transform 0.3s ease;
+        }
+        .zen-content p:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header y Navegación -->
+    <header class="fixed top-0 z-50 w-full bg-white bg-opacity-10 backdrop-blur-md transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto flex items-center justify-between p-4">
+            <a href="#inicio" class="flex items-center text-2xl font-bold text-white no-underline">
+                <span class="mr-2 text-4xl">🐍</span> Python
+            </a>
+            <ul class="hidden gap-8 md:flex">
+                <li><a href="#historia" class="text-white hover:text-yellow-300 font-semibold transition-colors duration-300 nav-link">Historia</a></li>
+                <li><a href="#caracteristicas" class="text-white hover:text-yellow-300 font-semibold transition-colors duration-300 nav-link">Características</a></li>
+                <li><a href="#aplicaciones" class="text-white hover:text-yellow-300 font-semibold transition-colors duration-300 nav-link">Aplicaciones</a></li>
+                <li><a href="#recursos" class="text-white hover:text-yellow-300 font-semibold transition-colors duration-300 nav-link">Recursos</a></li>
+                <li><a href="#cuestionario" class="text-white hover:text-yellow-300 font-semibold transition-colors duration-300 nav-link">Cuestionario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Sección Hero (Inicio) -->
+        <section id="inicio" class="section flex flex-col items-center justify-center py-16 text-center text-white md:py-24">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-extrabold md:text-6xl mb-4 animate-[slideInDown_1s_ease-out]">Python</h1>
+                <p class="text-lg md:text-2xl mb-8 opacity-90 animate-[slideInUp_1s_ease-out_0.3s_both]">El lenguaje de programación más versátil y poderoso del mundo</p>
+                <a href="#caracteristicas" class="inline-block px-8 py-4 text-white font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out bg-gradient-to-r from-red-400 to-cyan-400 hover:scale-105 hover:shadow-2xl animate-[slideInUp_1s_ease-out_0.6s_both] nav-link">Explora sus características</a>
+            </div>
+        </section>
+
+        <!-- Sección Historia -->
+        <section id="historia" class="section bg-white rounded-3xl shadow-xl mx-4 my-8 p-8 md:p-12 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="relative text-3xl md:text-4xl font-bold text-center mb-12 after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-red-400 after:to-cyan-400 after:rounded-full">Historia de Python</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                    <div class="space-y-6">
+                        <div class="history-text">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Los Orígenes</h3>
+                            <p class="text-gray-600 leading-relaxed">Python fue creado por <strong>Guido van Rossum</strong> en el Centro para las Matemáticas y la Informática (CWI) en los Países Bajos. El desarrollo comenzó en diciembre de 1989, y la primera versión (0.9.0) fue lanzada en febrero de 1991.</p>
+                        </div>
+                        <div class="history-text">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">¿Por qué "Python"?</h3>
+                            <p class="text-gray-600 leading-relaxed">El nombre no viene de la serpiente, sino del grupo de comedia británico "Monty Python's Flying Circus". Van Rossum era fanático del programa y quería un nombre corto, único y ligeramente misterioso.</p>
+                        </div>
+                        <div class="history-text">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Filosofía del Diseño</h3>
+                            <p class="text-gray-600 leading-relaxed">Van Rossum diseñó Python con la filosofía de que el código debe ser fácil de leer y escribir. Esto se refleja en el famoso "Zen de Python" que incluye principios como "Bello es mejor que feo" y "Simple es mejor que complejo".</p>
+                        </div>
+                    </div>
+                    <div class="relative pl-8 md:pl-12 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-cyan-400 before:to-red-400 before:rounded-full">
+                        <div class="timeline-item relative mb-8 pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-400 before:rounded-full before:-translate-x-1/2 before:border-4 before:border-white before:shadow-md">
+                            <div class="year font-bold text-lg text-gray-800 mb-1">1989</div>
+                            <div class="event text-gray-600">Guido van Rossum comienza el desarrollo de Python</div>
+                        </div>
+                        <div class="timeline-item relative mb-8 pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-400 before:rounded-full before:-translate-x-1/2 before:border-4 before:border-white before:shadow-md">
+                            <div class="year font-bold text-lg text-gray-800 mb-1">1991</div>
+                            <div class="event text-gray-600">Primera versión pública (0.9.0)</div>
+                        </div>
+                        <div class="timeline-item relative mb-8 pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-400 before:rounded-full before:-translate-x-1/2 before:border-4 before:border-white before:shadow-md">
+                            <div class="year font-bold text-lg text-gray-800 mb-1">2000</div>
+                            <div class="event text-gray-600">Python 2.0 - Recolector de basura, comprensiones de lista</div>
+                        </div>
+                        <div class="timeline-item relative mb-8 pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-400 before:rounded-full before:-translate-x-1/2 before:border-4 before:border-white before:shadow-md">
+                            <div class="year font-bold text-lg text-gray-800 mb-1">2008</div>
+                            <div class="event text-gray-600">Python 3.0 - Renovación mayor del lenguaje</div>
+                        </div>
+                        <div class="timeline-item relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-cyan-400 before:rounded-full before:-translate-x-1/2 before:border-4 before:border-white before:shadow-md">
+                            <div class="year font-bold text-lg text-gray-800 mb-1">2024</div>
+                            <div class="event text-gray-600">Python 3.12 - Versión actual con mejoras</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Características -->
+        <section id="caracteristicas" class="section bg-white rounded-3xl shadow-xl mx-4 my-8 p-8 md:p-12 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="relative text-3xl md:text-4xl font-bold text-center mb-12 after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-red-400 after:to-cyan-400 after:rounded-full">Características Principales</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-2xl text-center transition-all duration-300 ease-in-out border-2 border-transparent hover:translate-y-[-10px] hover:border-cyan-400 shadow-md">
+                        <span class="block text-4xl mb-4">✨</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Sencillez y Legibilidad</h3>
+                        <p class="text-gray-600 leading-relaxed">Su sintaxis clara y concisa hace que sea fácil de aprender, leer y escribir. Se enfoca en la productividad y en reducir la complejidad del código.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl text-center transition-all duration-300 ease-in-out border-2 border-transparent hover:translate-y-[-10px] hover:border-cyan-400 shadow-md">
+                        <span class="block text-4xl mb-4">🚀</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Versatilidad y Potencia</h3>
+                        <p class="text-gray-600 leading-relaxed">Un lenguaje de propósito general utilizado en una amplia gama de campos, desde el desarrollo web y la ciencia de datos hasta la inteligencia artificial y la automatización.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl text-center transition-all duration-300 ease-in-out border-2 border-transparent hover:translate-y-[-10px] hover:border-cyan-400 shadow-md">
+                        <span class="block text-4xl mb-4">🌐</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Amplia Comunidad y Ecosistema</h3>
+                        <p class="text-gray-600 leading-relaxed">Una de las comunidades más grandes de desarrolladores del mundo, con miles de bibliotecas (como NumPy, Pandas, Django) que aceleran el desarrollo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Aplicaciones -->
+        <section id="aplicaciones" class="section bg-white rounded-3xl shadow-xl mx-4 my-8 p-8 md:p-12 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="relative text-3xl md:text-4xl font-bold text-center mb-12 after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-red-400 after:to-cyan-400 after:rounded-full">Aplicaciones en el Mundo Real</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-8 rounded-2xl text-center text-white transition-transform duration-300 ease-in-out shadow-md hover:scale-105 bg-gradient-to-r from-indigo-500 to-purple-600">
+                        <h4 class="text-xl font-bold mb-2">Desarrollo Web</h4>
+                        <p class="text-gray-200">Construcción de servidores web, frameworks como Django y Flask, y APIs.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl text-center text-white transition-transform duration-300 ease-in-out shadow-md hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500">
+                        <h4 class="text-xl font-bold mb-2">Ciencia de Datos y ML</h4>
+                        <p class="text-gray-200">Análisis de datos, aprendizaje automático e inteligencia artificial con librerías como TensorFlow y Scikit-learn.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl text-center text-white transition-transform duration-300 ease-in-out shadow-md hover:scale-105 bg-gradient-to-r from-blue-500 to-teal-500">
+                        <h4 class="text-xl font-bold mb-2">Automatización de Tareas</h4>
+                        <p class="text-gray-200">Creación de scripts para automatizar procesos repetitivos y tareas de administración del sistema.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl text-center text-white transition-transform duration-300 ease-in-out shadow-md hover:scale-105 bg-gradient-to-r from-green-500 to-lime-500">
+                        <h4 class="text-xl font-bold mb-2">Desarrollo de Software</h4>
+                        <p class="text-gray-200">Creación de aplicaciones de escritorio, herramientas de línea de comandos y prototipos rápidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Recursos -->
+        <section id="recursos" class="section bg-white rounded-3xl shadow-xl mx-4 my-8 p-8 md:p-12 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="relative text-3xl md:text-4xl font-bold text-center mb-12 after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-red-400 after:to-cyan-400 after:rounded-full">Recursos para Aprender</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-cyan-400 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Documentación Oficial</h4>
+                        <p class="text-gray-600">El mejor lugar para empezar. <a href="https://docs.python.org/es/3/" target="_blank" class="text-cyan-600 font-bold hover:underline">Visitar sitio</a></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-cyan-400 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Tutoriales de Python.org</h4>
+                        <p class="text-gray-600">Una guía interactiva y completa. <a href="https://docs.python.org/es/3/tutorial/index.html" target="_blank" class="text-cyan-600 font-bold hover:underline">Visitar sitio</a></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-cyan-400 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Python para Principiantes</h4>
+                        <p class="text-gray-600">Tutoriales y guías para nuevos programadores. <a href="https://www.python.org/about/gettingstarted/" target="_blank" class="text-cyan-600 font-bold hover:underline">Visitar sitio</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- El Zen de Python -->
+        <section id="zen-python" class="zen-python bg-gradient-to-r from-purple-400 to-pink-500 text-white rounded-3xl mx-4 my-8 p-8 md:p-12 text-center hidden">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold mb-6">El Zen de Python</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Bello es mejor que feo.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Explícito es mejor que implícito.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Simple es mejor que complejo.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Complejo es mejor que complicado.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Plano es mejor que anidado.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Espaciado es mejor que denso.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">La legibilidad cuenta.</p>
+                    <p class="bg-white bg-opacity-20 p-4 rounded-xl italic text-lg shadow-md">Los casos especiales no son lo suficientemente especiales como para romper las reglas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Cuestionario -->
+        <section id="cuestionario" class="section bg-white rounded-3xl shadow-xl mx-4 my-8 p-8 md:p-12 hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="relative text-3xl md:text-4xl font-bold text-center mb-12 after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-gradient-to-r after:from-red-400 after:to-cyan-400 after:rounded-full">Cuestionario</h2>
+                <div id="quiz-button-container" class="text-center">
+                    <button id="open-quiz-btn" class="px-8 py-4 text-white font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out bg-gradient-to-r from-purple-400 to-pink-500 hover:scale-105 hover:shadow-2xl">Abrir cuestionario</button>
+                </div>
+                
+                <div id="quiz-container" class="hidden bg-gradient-to-r from-purple-400 to-pink-500 text-gray-800 p-8 rounded-xl shadow-lg max-w-2xl mx-auto my-8">
+                    <h2 id="quiz-title" class="text-3xl font-bold text-center mb-6 text-white">¡A prueba tus conocimientos!</h2>
+                    <form id="quiz-form">
+                        <!-- Pregunta 1 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">1. ¿Qué tipo de lenguaje es Python?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p1" value="Interpretado" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">Interpretado</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p1" value="Compilado" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">Compilado</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">2. ¿Qué instrucción imprime en consola?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p2" value="print()" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">print()</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p2" value="echo()" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">echo()</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">3. ¿Cómo se define una función?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p3" value="def mi_funcion():" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">def mi_funcion():</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p3" value="function mi_funcion() {}" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">function mi_funcion() {}</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 4 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">4. ¿Qué estructura guarda múltiples valores?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p4" value="list" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">list</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p4" value="int" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">int</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">5. ¿Cuál es el símbolo para comentarios?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p5" value="# comentario" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2"># comentario</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p5" value="// comentario" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">// comentario</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 6 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">6. ¿Qué valor booleano representa falso?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p6" value="False" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">False</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p6" value="None" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">None</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 7 -->
+                        <div class="mb-6">
+                            <p class="text-xl font-semibold mb-4 text-white">7. ¿Qué biblioteca se usa para ciencia de datos?</p>
+                            <div class="flex flex-col gap-2">
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p7" value="pandas" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">pandas</span></label>
+                                <label class="flex items-center text-white text-lg cursor-pointer"><input type="radio" name="p7" value="turtle" class="form-radio h-5 w-5 text-purple-600 cursor-pointer"> <span class="ml-2">turtle</span></label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="submit-quiz-btn" class="mt-8 mx-auto block px-6 py-3 bg-white text-purple-600 font-bold rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300">Enviar formulario</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Python - Proyecto hecho por Alex Reyes-Jessica Trejo-Jonathan Roman.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal for Quiz Results -->
+    <div id="result-modal" class="fixed inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center z-[2000] opacity-0 invisible transition-all duration-300">
+        <div class="bg-white p-8 rounded-xl shadow-2xl text-center transform -translate-y-12 transition-transform duration-300">
+            <p id="modal-text" class="text-2xl font-semibold mb-6"></p>
+            <button id="close-modal-btn" class="bg-indigo-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-indigo-600 transition-colors duration-300">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- JavaScript para la lógica de la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecciona todas las secciones que no sean la de "Hero"
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Función para ocultar todas las secciones
+            function hideAllSections() {
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+            }
+
+            // Función para mostrar una sección específica
+            function showSection(id) {
+                hideAllSections();
+                const sectionToShow = document.getElementById(id);
+                if (sectionToShow) {
+                    sectionToShow.classList.remove('hidden');
+                }
+            }
+
+            // Oculta todas las secciones al cargar la página, excepto el inicio
+            hideAllSections();
+            document.getElementById('inicio').classList.remove('hidden');
+
+            // Agrega event listeners a los enlaces de navegación
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Obtiene el ID de la sección del atributo href
+                    const targetId = link.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+
+            // Lógica para el cuestionario (mantenida del código anterior)
+            const respuestasCorrectas = {
+                'p1': 'Interpretado',
+                'p2': 'print()',
+                'p3': 'def mi_funcion():',
+                'p4': 'list',
+                'p5': '# comentario',
+                'p6': 'False',
+                'p7': 'pandas'
+            };
+
+            const quizContainer = document.getElementById('quiz-container');
+            const openQuizBtn = document.getElementById('open-quiz-btn');
+            const quizForm = document.getElementById('quiz-form');
+            const quizButtonContainer = document.getElementById('quiz-button-container');
+            const modalOverlay = document.getElementById('result-modal');
+            const modalText = document.getElementById('modal-text');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            function showModal(message) {
+                modalText.textContent = message;
+                modalOverlay.classList.remove('opacity-0', 'invisible');
+                modalOverlay.classList.add('opacity-100', 'visible');
+                modalOverlay.querySelector('.bg-white').classList.remove('-translate-y-12');
+                modalOverlay.querySelector('.bg-white').classList.add('translate-y-0');
+            }
+            
+            function hideModal() {
+                modalOverlay.classList.add('opacity-0', 'invisible');
+                modalOverlay.classList.remove('opacity-100', 'visible');
+                modalOverlay.querySelector('.bg-white').classList.add('-translate-y-12');
+                modalOverlay.querySelector('.bg-white').classList.remove('translate-y-0');
+            }
+
+            if (openQuizBtn) {
+                openQuizBtn.addEventListener('click', function() {
+                    quizContainer.classList.remove('hidden');
+                    quizButtonContainer.classList.add('hidden');
+                    quizForm.reset();
+                });
+            }
+
+            if (quizForm) {
+                quizForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    let puntuacion = 0;
+                    const preguntas = Object.keys(respuestasCorrectas);
+                    preguntas.forEach(pregunta => {
+                        const respuestaUsuario = quizForm.querySelector(`input[name="${pregunta}"]:checked`);
+                        if (respuestaUsuario && respuestaUsuario.value === respuestasCorrectas[pregunta]) {
+                            puntuacion++;
+                        }
+                    });
+                    showModal(`Tu puntuación es: ${puntuacion} de ${preguntas.length}.`);
+                });
+            }
+            
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    hideModal();
+                    quizContainer.classList.add('hidden');
+                    if(quizButtonContainer) {
+                        quizButtonContainer.classList.remove('hidden');
+                    }
+                });
+            }
+
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        hideModal();
+                        quizContainer.classList.add('hidden');
+                        if(quizButtonContainer) {
+                            quizButtonContainer.classList.remove('hidden');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

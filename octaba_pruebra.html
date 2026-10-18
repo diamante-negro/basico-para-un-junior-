@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octava Prueba</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    width: 1350px;
+    height: 1350px;
+    margin: auto;
+    background-color: rgb(32, 31, 30);
+}
+header{
+    margin-top: 10px;
+    width: 1300px;
+    height: 300px;
+    margin: auto;
+    background-color:  rgb(17, 17, 17);
+    border-radius: 30px 30px 0px 0px;
+}
+
+nav{
+    width: 1300px;
+    height: 30px;
+    margin: auto;
+    background-color: rgb(17, 17, 17);
+}
+main{
+    width: 1300px;
+    height: 800px;
+    margin: auto;
+    background: linear-gradient( 
+        0deg,
+    rgb(109, 109, 109),
+    rgb(63, 63, 63)
+    );
+}
+footer{
+    width: 1300px;
+    height: 125px;
+    margin: auto;
+    background: linear-gradient(
+        180deg,
+        rgb(109, 109, 109),
+        rgb(70, 69, 69)
+        );
+    border-radius: 0px 0px 30px 30px;
+}
+section.ban{
+    width: 1100px;
+    height: 300px;
+    background-color: rgb(17, 17, 17);
+    float: left;
+    border-radius: 30px 0px 0px 0px;
+}
+.imn{
+    margin-left: 2px;
+    border-radius: 30px 0px 30px 0px;
+    border-color: #6e01d4;
+    float: right;
+}
+.bor{
+    border-radius: 60% 0px 60% 0px;
+    float:none;
+    margin-top: 35px;
+}
+.bt{
+    width: 1300px;
+    height: 70px;
+    margin: auto;
+    background: linear-gradient(
+    180deg,
+    rgb(17, 17, 17),
+    rgb(63, 63, 63)
+    );
+}
+button{
+    margin: auto;
+    width: 430px;
+    height: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: rgb(245, 241, 241);
+    border: 0;
+    background-image: linear-gradient(
+        150deg,
+        #6e01d4,
+        rgb(106, 126, 240),
+        #3db1db
+    );
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+button span{
+    background-color: rgb(15, 15, 15);
+    padding: 10px 130px;
+    border-radius: 6px;
+    transition: .25s;
+}
+button:hover span{
+    background: none;
+    font-size: 35px;
+}
+
+.ti{
+    width: 864px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(
+        180deg,
+        rgb(63, 63, 63),
+        rgb(70, 69, 69)
+    );
+}
+.in{
+    width: 864px;
+    height: 750px;
+    float: left;
+    background: linear-gradient(
+        0deg,
+        rgb(109, 109, 109),
+        rgb(70, 69, 69)
+    );
+}
+p{
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: rgb(224, 224, 224);
+}
+b{
+    margin: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+h4{
+    margin-top: 20px;
+    margin: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+.ñ{
+    background-color: rgb(63, 63, 63);
+}
+.pu{
+    width: 400px;
+    height: 800px;
+    float: left;
+}
+.ul{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+img{
+    border-radius: 30px;
+}
+.sep{
+    margin-top: 20px;
+}
+        .bor{
+            border-radius: 60% 0px 60% 0px;
+            float: none;
+            margin-top: 35px;
+        }
+        .imn{
+            margin-left: 2px;
+            border-radius: 30px 0px 30px 0px;
+            border-color: #6e01d4;
+            float: right;
+        }
+        .ñ{
+            background-color: rgb(63, 63, 63);
+        }
+        header{
+            margin-top: 10px;
+            width: 1300px;
+            height: 300px;
+            margin: auto;
+            background-color:  rgb(17, 17, 17);
+            border-radius: 30px 30px 0px 0px;
+        }
+        h1{
+            margin-top: 100px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+        }
+        h2{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 40px;
+        }
+        h3{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+        }
+        h4{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+        h5{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+        h6{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+        }
+        nav{
+            width: 1300px;
+            height: 30px;
+            margin: auto;
+            background-color: rgb(17, 17, 17);
+        }
+        input[type="submit"] {
+            width: 1300px;
+            height: 70px;
+            background-color: rgb(17, 17, 17);
+            color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <input type="submit" value="Volver" class="bt" onclick="location.href='ejemplo.html'">
+<header>
+    <img src="logo.png" class="imn" alt="Logo" height="300" width="300">
+    <h1 class="bor">Octava Prueba</h1>
+</header>
+<main>
+    <section class="ban">
+        <h2 class="ñ">¿Qué es CSS?</h2>
+        <img src="logo.png" alt="Logo" height="300" width="300" class="bor">
+        <p>CSS (Cascading Style Sheets) es un lenguaje de diseño utilizado para describir la presentación de un documento escrito en HTML o XML. CSS permite separar el contenido del documento de su presentación visual, lo que facilita la creación de sitios web atractivos y responsivos.</p>
+        <p>Con CSS, puedes controlar aspectos como colores, fuentes, márgenes, espaciado y disposición de los elementos en una página web. Esto permite a los desarrolladores web aplicar estilos consistentes en todo el sitio, mejorar la accesibilidad y optimizar la experiencia del usuario.</p>
+        <h3 class="ñ">Características clave de CSS:</h3>
+        <ul class="ul">
+            <li>Separación de contenido y presentación: Permite modificar el estilo sin afectar el contenido.</li>
+            <li>Soporte para múltiples dispositivos: CSS facilita la creación de diseños responsivos que se adaptan a diferentes tamaños de pantalla.</li>
+            <li>Estilos en cascada: Los estilos pueden heredarse y combinarse, lo que permite una mayor flexibilidad.</li>
+            <li>Animaciones y transiciones: CSS permite agregar efectos visuales dinámicos a los elementos de la página.</li>
+            <li>Compatibilidad con navegadores: CSS es compatible con todos los navegadores modernos, lo que garantiza una experiencia uniforme para los usuarios.</li>
+        </ul>
+    </section>
+</html>

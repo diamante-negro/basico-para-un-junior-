@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misterio</title>
+    <!-- Incluye el CDN de Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilo para la fuente Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor principal del sitio -->
+    <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-xl max-w-2xl w-full text-center border-2 border-gray-700">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Bienvenido, viajero...
+        </h1>
+        <p class="text-gray-400 text-lg mb-6">
+            ...a un lugar donde todo puede suceder.
+        </p>
+
+        <!-- Formulario para la verificación de edad -->
+        <div id="age-form-container" class="mt-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">
+                ¿Cuántos años tienes?
+            </h2>
+            <input type="number" id="age-input" placeholder="Introduce tu edad..."
+                   class="w-full md:w-3/4 p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4 text-center">
+            <button id="check-age-btn"
+                    class="w-full md:w-auto px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50">
+                Entrar
+            </button>
+            <p id="age-message" class="text-red-400 mt-4 hidden">
+                Lo siento, necesitas ser mayor de edad para entrar.
+            </p>
+        </div>
+
+        <!-- Contenido que se muestra después de la verificación de edad -->
+        <div id="misterio-content" class="hidden mt-8 transition-opacity duration-500 opacity-0">
+            <p class="text-xl md:text-2xl text-gray-300 mb-4">
+                En este sitio encontrarás cosas sorprendentes y misteriosas.
+            </p>
+            <p class="text-lg text-gray-500 mb-6">
+                Este es un lugar donde todo puede suceder.
+            </p>
+            <p id="age-greeting" class="text-sm text-gray-600">
+                ¡Espero que disfrutes de esta experiencia!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Obtenemos los elementos del DOM
+        const ageInput = document.getElementById('age-input');
+        const checkAgeBtn = document.getElementById('check-age-btn');
+        const ageFormContainer = document.getElementById('age-form-container');
+        const misterioContent = document.getElementById('misterio-content');
+        const ageGreeting = document.getElementById('age-greeting');
+        const ageMessage = document.getElementById('age-message');
+
+        // Escuchador de eventos para el botón "Entrar"
+        checkAgeBtn.addEventListener('click', () => {
+            const age = parseInt(ageInput.value, 10); // Obtenemos y convertimos la edad a un número
+
+            // Verificamos si la edad es válida
+            if (isNaN(age) || age < 18) {
+                // Si es menor de 18 o no es un número, mostramos un mensaje de error
+                ageMessage.classList.remove('hidden');
+                ageInput.classList.add('ring-2', 'ring-red-500');
+            } else {
+                // Si la edad es válida, ocultamos el formulario de edad
+                ageFormContainer.classList.add('hidden');
+                
+                // Determinamos el mensaje de bienvenida y su contenido
+                let greetingText = `<p>¡Bienvenido, con la edad de: ${age}!</p>`;
+                
+                // Agregamos un mensaje especial para edades específicas
+                if (age > 100) {
+                    greetingText += `<p class="text-yellow-400 text-lg mt-2">¡Vaya, un viajero del tiempo! ¡Espero que disfrutes de este misterio!</p>`;
+                } else if (age === 21) {
+                    greetingText += `<p class="text-green-400 text-lg mt-2">¡21 es un gran año para la aventura! ¡Adelante!</p>`;
+                }
+
+                greetingText += `<p class="mt-4">¡Gracias por visitar!</p>`;
+
+                // Actualizamos el saludo en el contenido del misterio
+                ageGreeting.innerHTML = greetingText;
+
+                // Mostramos el contenido del misterio con una animación de desvanecimiento
+                misterioContent.classList.remove('hidden');
+                setTimeout(() => {
+                    misterioContent.classList.add('opacity-100');
+                }, 50); // Pequeño retraso para que la animación funcione
+            }
+        });
+
+        // Limpiar el estado de error cuando el usuario escribe
+        ageInput.addEventListener('input', () => {
+            ageMessage.classList.add('hidden');
+            ageInput.classList.remove('ring-2', 'ring-red-500');
+        });
+    </script>
+</body>
+</html>
+
